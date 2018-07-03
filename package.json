@@ -1,0 +1,24 @@
+{
+  "name": "eat_what",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./package.json,./package-lock.json,./.babelrc --copy-files",
+    "start": "npm run build && node dist/app.js"
+  },
+  "author": "Renet",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "morgan": "^1.9.0",
+    "restify": "^7.2.1",
+    "restify-router": "^0.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.2"
+  }
+}
