@@ -1,14 +1,13 @@
-----
-#endpoint
-----
-#/users
+endpoint
+====
+# /users
 show all users (admin only)
-##/auth
+## /auth
 create new user
-##/login
+## /login
 user login
-##/:id
-###/update
+## /:id
+### /update
 update user (:id or admin only)
-###/delete
+### /delete
 delete user (:id or admin only)
