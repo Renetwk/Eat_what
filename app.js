@@ -1,8 +1,21 @@
 import restify from 'restify';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 
 const app = restify.createServer();
+
+//connect db
+import secret from './secret/secret';
+mongoose.connect(secret.db_url);
+const ewDB = mongoose.connection;
+
+ewDB.on('error', (err)=>{
+    throw err;
+});
+ewDB.once('open', ()=>{
+    console.log('DB open');
+});
 
 //import routes
 import user_route from './route/user.route';
